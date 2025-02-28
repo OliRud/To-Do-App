@@ -5,19 +5,19 @@ function Task(props) {
     
     if(props.todoItem.status === "completed"){
         task = (
-            <ul>
+            <li style={{color:"darkred"}} onClick={() => {props.changeItemStatus(props.todoItem)}}>
                 <h3>
                     <strike>{props.todoItem.description}</strike>
                 </h3>
-            </ul>
+            </li>
         )
     } else {
         task = (
-            <ul>
+            <li style={{color:"green"}} onClick={() => {props.changeItemStatus(props.todoItem)}}>
                 <h3>
                     {props.todoItem.description}
                 </h3>
-            </ul>
+            </li>
         )
     }
     return (

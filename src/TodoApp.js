@@ -8,6 +8,16 @@ const initialState = [
     {
         id: 1,
         description: "first",
+        status: "completed",
+    },
+    {
+        id: 2,
+        description: "second",
+        status: "completed",
+    },
+    {
+        id: 3,
+        description: "third",
         status: "pending",
     },
 ]
@@ -15,6 +25,8 @@ const initialState = [
 
 
 function TodoApp(){
+
+    const [todoItems,setToDoItem] = useState(initialState)
 
     function addTodoItem(item){
 
@@ -24,7 +36,19 @@ function TodoApp(){
         );
     }
 
-    const [todoItems,setToDoItem] = useState(initialState)
+    function removeTodoItem(item){
+        let newItems = todoItems.filter(i => i.id != item.id);
+
+        setToDoItem(newItems);
+    };
+
+    function changeItemStatus(item){
+        item.status === "pending" ? item.status = "completed" : item.status = "pending";
+        let otherItems = todoItems.filter(i => i.id != item.id);
+        setToDoItem(
+            [... otherItems, item]
+        )
+    }
 
     //sort to put the completed items on top
     todoItems.sort((a,b) => a.status.localeCompare(b.status))
@@ -33,9 +57,9 @@ function TodoApp(){
         <div className="TodoApp">
             <TodoForm onAddItem={addTodoItem}/>
             <Summary todoItems={todoItems}/>
-            <TodoList todoItems={todoItems}/>
+            <TodoList todoItems={todoItems} changeItemStatus={changeItemStatus}/>
         </div>
-        );
+        ); 
 }
 
-export default TodoApp;
+export default TodoApp; 

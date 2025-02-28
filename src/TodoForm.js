@@ -11,7 +11,7 @@ function TodoForm(props) {
     function handleSubmit(event){
         let todoItem = {
             description: description,
-            status: "completed"
+            status: "pending"
         };
         console.log(todoItem);
         props.onAddItem(todoItem)
