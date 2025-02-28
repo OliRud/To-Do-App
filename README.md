@@ -1,4 +1,4 @@
-The "Hello World" of web development, here i try to make a functioning to-do app to learn the basics of javascript and react
+The "Hello World" of web development, here i try to make a functioning to-do app to learn the basics of javascript and react.
 
 # Getting Started with Create React App
 
