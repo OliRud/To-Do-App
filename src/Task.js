@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 function Task(props) {
     let task;
@@ -20,8 +20,16 @@ function Task(props) {
             </li>
         )
     }
+
+    function doneButtonClicked(){
+        props.removeTodoItem(props.todoItem)
+    }
+
     return (
-        task
+        <div style={{display:"flex",flexDirection:"row",justifyContent:"space-around"}}>
+            {task}
+            <button onClick={doneButtonClicked}> Remove </button>
+        </div>
     );
 }
 

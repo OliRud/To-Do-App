@@ -1,11 +1,12 @@
 import React from "react";
 import TodoApp from "./TodoApp"; 
+import Header from "./Header";
 
 function Layout() {
   return (
     <div className="Layout">
       <div className="header">
-        <h1>My To-Do List Application</h1>
+        <Header/>
       </div>
 
       <div className="content">

@@ -8,7 +8,7 @@ function TodoList(props) {
 
         {
             props.todoItems.map((item,index) =>{
-                return (<Task todoItem={item} changeItemStatus={props.changeItemStatus}/>);
+                return (<Task todoItem={item} removeTodoItem={props.removeTodoItem} changeItemStatus={props.changeItemStatus}/>);
             })
         }
     </ul>

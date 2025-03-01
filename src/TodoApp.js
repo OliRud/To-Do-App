@@ -37,9 +37,9 @@ function TodoApp(){
     }
 
     function removeTodoItem(item){
-        let newItems = todoItems.filter(i => i.id != item.id);
+        let newItems = todoItems.filter(i => i.id != item.id); //recollect all the items but filter out the ones finished
 
-        setToDoItem(newItems);
+        setToDoItem(newItems); //apply the new items 
     };
 
     function changeItemStatus(item){
@@ -52,12 +52,13 @@ function TodoApp(){
 
     //sort to put the completed items on top
     todoItems.sort((a,b) => a.status.localeCompare(b.status))
+    
 
     return (
         <div className="TodoApp">
             <TodoForm onAddItem={addTodoItem}/>
             <Summary todoItems={todoItems}/>
-            <TodoList todoItems={todoItems} changeItemStatus={changeItemStatus}/>
+            <TodoList todoItems={todoItems} removeTodoItem={removeTodoItem} changeItemStatus={changeItemStatus}/>
         </div>
         ); 
 }
