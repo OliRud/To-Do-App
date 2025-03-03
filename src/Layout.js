@@ -2,11 +2,11 @@ import React from "react";
 import TodoApp from "./TodoApp"; 
 import Header from "./Header";
 
-function Layout() {
+function Layout(props) {
   return (
     <div className="Layout">
       <div className="header">
-        <Header/>
+        <Header toggleSidebar={props.toggleSidebar}/>
       </div>
 
       <div className="content">
