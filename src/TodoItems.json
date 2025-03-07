@@ -1,0 +1,24 @@
+{
+    "Todo":[
+        {
+            "id":"1",
+            "description": "first item",
+            "status":"pending"
+        },
+        {
+            "id":"2",
+            "description": "second item",
+            "status":"pending"
+        },
+        {
+            "id":"3",
+            "description": "third item",
+            "status":"completed"
+        },
+        {
+            "id":"4",
+            "description": "fourth item",
+            "status":"completed"
+        }
+    ]
+}
